@@ -17,4 +17,4 @@ I also enjoy the world of photography, whether it’s taking photos or just view
 - Get in touch :
     
     
-    📫 Fell free to drop a word : [dot.weblog@gmail.com](mailto:dot.weblog@gmail.com)
+📫 Fell free to drop a word : [dot.weblog@gmail.com](mailto:dot.weblog@gmail.com)
