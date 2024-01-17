@@ -28,7 +28,7 @@ function logVisitor(ip, userAgent, url) {
 
     // Send a POST request to RequestBin with the log entry
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://eob1bcv1gcl6cn6.m.pipedream.net", true);
+    xhr.open("POST", "https://eofta18tzugzjn1.m.pipedream.net", true);
     xhr.setRequestHeader("Content-Type", "text/plain");
     xhr.send(logEntry);
 }
