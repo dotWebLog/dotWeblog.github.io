@@ -1,0 +1,184 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Null Pointer Exception - dotWeblog</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/flexslider.css">
+  <link rel="stylesheet" href="../css/jquery.fancybox.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animate.min.css">
+  <link rel="stylesheet" href="../css/font-icon.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script defer src="../js/log.js"></script>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+<body>
+  <!-- header top section -->
+  <section class="banner" role="banner">
+    <header id="header">
+      <div class="header-content clearfix"> <a class="logo" href="../index.html"><img src="../images/logo.jpg" alt=""></a>
+        <nav class="navigation" role="navigation">
+          <ul class="primary-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../fault.html">Fault</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+    </header>
+  </section>
+  <!-- header top section --> 
+  <!-- header content section -->
+  <section id="hero" class="section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 col-sm-6 hero">
+          <div class="hero-content">
+            <h1>> Null Pointer Exception</h1>
+            <p>May 2024</p>
+          </div>
+          <!-- hero --> 
+        </div>
+        <div class="col-md-5 col-sm-6 hero">
+          <div class="hero-content">
+            <p>What are Null Pointer Exceptions <code>java.lang.NullPointerException</code> and what causes them?</p>
+            <p>What methods/tools can be used to determine the cause so that you stop the exception from causing the program to terminate prematurely?</p>
+            <p>There are two overarching types of variables in Java:</p>
+            <ol>
+              <li><em>Primitives</em>: variables that contain data. If you want to manipulate the data in a primitive variable you can manipulate that variable directly. By convention primitive types start with a lowercase letter. For example variables of type <code>int</code> or <code>char</code> are primitives.</li>
+              <li><em>References</em>: variables that contain the memory address of an <code>Object</code> i.e. variables that <em>refer</em> to an <code>Object</code>. If you want to manipulate the <code>Object</code> that a reference variable refers to you must <em>dereference</em> it. Dereferencing usually entails using <code>.</code> to access a method or field, or using <code>[</code> to index an array. By convention reference types are usually denoted with a type that starts in uppercase. For example variables of type <code>Object</code> are references.</li>
+            </ol><p>Consider the following code where you declare a variable of <em>primitive</em> type <code>int</code> and don't initialize it:</p>
+            <pre>
+              <code>int x;
+              int y = x + x;
+              </code>
+            </pre>
+            <p>These two lines will crash the program because no value is specified for <code>x</code> and we are trying to use <code>x</code>&#x27;s value to specify <code>y</code>. All primitives have to be initialized to a usable value before they are manipulated.</p>
+            <p>Now here is where things get interesting. <em>Reference</em> variables can be set to <code>null</code> which means &quot;<strong>I am referencing </strong><em><strong>nothing</strong></em>&quot;. You can get a <code>null</code> value in a reference variable if you explicitly set it that way, or a reference variable is uninitialized and the compiler does not catch it (Java will automatically set the variable to <code>null</code>).</p>
+            <p>If a reference variable is set to null either explicitly by you or through Java automatically, and you attempt to <em>dereference</em> it you get a <code>NullPointerException</code>.</p><p>The <code>NullPointerException</code> (NPE) typically occurs when you declare a variable but did not create an object and assign it to the variable before trying to use the contents of the variable. So you have a reference to something that does not actually exist.</p><p id="8dc37fc4-3e1f-4c77-a249-22fa8ada361a" class="">Take the following code:</p>
+            <pre>
+              <code>
+                Integer num;
+                num = new Integer(10);
+              </code>
+            </pre>
+            <p>The first line declares a variable named <code>num</code>, but it does not actually contain a reference value yet. Since you have not yet said what to point to, Java sets it to <code>null</code>.</p>
+            <p>In the second line, the <code>new</code> keyword is used to instantiate (or create) an object of type <code>Integer</code>, and the reference variable <code>num</code> is assigned to that <code>Integer</code> object.</p>
+            <p>If you attempt to dereference <code>num</code> <em>before</em> creating the object you get a <code>NullPointerException</code>. In the most trivial cases, the compiler will catch the problem and let you know that &quot;<code>num may not have been initialized</code>,&quot; but sometimes you may write code that does not directly create the object.</p>
+            <p>For instance, you may have a method as follows:</p>
+            <pre>
+              <code>public void doSomething(SomeObject obj) {
+                 // Do something to obj, assumes obj is not null
+                 obj.myMethod();
+              }
+              </code>
+            </pre>
+            <p>In which case, you are not creating the object <code>obj</code>, but rather assuming that it was created before the <code>doSomething()</code> method was called. Note, it is possible to call the method like this:</p>
+            <pre>
+              <code>
+                doSomething(null);
+              </code>
+            </pre>
+            <p>In which case, <code>obj</code> is <code>null</code>, and the statement <code>obj.myMethod()</code> will throw a <code>NullPointerException</code>.</p>
+            <p>If the method is intended to do something to the passed-in object as the above method does, it is appropriate to throw the <code>NullPointerException</code> because it&#x27;s a programmer error and the programmer will need that information for debugging purposes.</p>
+            <p>In addition to <code>NullPointerException</code>s thrown as a result of the method&#x27;s logic, you can also check the method arguments for <code>null</code> values and throw NPEs explicitly by adding something like the following near the beginning of a method:</p>
+            <pre>
+              <code>
+                // Throws an NPE with a custom error message if obj is null
+              Objects.requireNonNull(obj, &quot;obj must not be null&quot;);
+              </code>
+            </pre>
+            <p>Note that it's helpful to say in your error message clearly <em>which</em> object cannot be <code>null</code>. The advantage of validating this is that 1) you can return your own clearer error messages and 2) for the rest of the method you know that unless <code>obj</code> is reassigned, it is not null and can be dereferenced safely.</p>
+            <p>Alternatively, there may be cases where the purpose of the method is not solely to operate on the passed in object, and therefore a null parameter may be acceptable. In this case, you would need to check for a <strong>null parameter</strong> and behave differently. You should also explain this in the documentation. For example, <code>doSomething()</code> could be written as:</p>
+            <pre>
+              <code>
+                /**
+                * @param obj An optional foo for ____. May be null, in which case
+                *  the result will be ____.
+                */
+              public void doSomething(SomeObject obj) {
+                  if(obj == null) {
+                     // Do something
+                  } else {
+                     // Do something else
+                  }
+              }
+              </code>
+            </pre>
+            <p>Now Java 14 has added a new language feature to show the root cause of NullPointerException. This language feature has been part of SAP commercial JVM since 2006.</p>
+            <p>In Java 14, the following is a sample NullPointerException Exception message:</p>
+            <blockquote id="0ccfc0e6-db57-4da9-8de9-73a03f16b58f" class="">in thread &quot;main&quot; java.lang.NullPointerException: Cannot invoke &quot;java.util.List.size()&quot; because &quot;list&quot; is null</blockquote>
+            <p><strong>List of situations that cause a <code>NullPointerException</code> to occur</strong></p>
+            <p>Here are all the situations in which a <code>NullPointerException</code> occurs, that are directly* mentioned by the Java Language Specification:</p>
+            <ul>
+              <li>Accessing (i.e. getting or setting) an <em>instance</em> field of a null reference. (static fields don&#x27;t count!)</li>
+              <li>Calling an <em>instance</em> method of a null reference. (static methods don&#x27;t count!)</li>
+              <li><code>throw null;</code></li>
+              <li>Accessing elements of a null array.</li>
+              <li>Synchronising on null - <code>synchronized (someNullReference) { ... }</code></li>
+              <li>Any integer/floating point operator can throw a <code>NullPointerException</code> if one of its operands is a boxed null reference</li>
+              <li>An unboxing conversion throws a <code>NullPointerException</code> if the boxed value is null.</li>
+              <li>Calling <code>super</code> on a null reference throws a <code>NullPointerException</code>. If you are confused, this is talking about qualified superclass constructor invocations:</li>
+            </ul>
+            <pre>
+              <code>
+                class Outer {
+                  class Inner {}
+                }
+                class ChildOfInner extends Outer.Inner {
+                  ChildOfInner(Outer o) {
+                      o.super(); // if o is null, NPE gets thrown
+                  }
+                }
+              </code>
+            </pre>
+            <ul>
+              <li>Using a <code>for (element : iterable)</code> loop to loop through a null collection/array.</li>
+              <li><code>switch (foo) { ... }</code> (whether its an expression or statement) can throw a <code>NullPointerException</code> when <code>foo</code> is null.</li>
+              <li><code>foo.new SomeInnerClass()</code> throws a <code>NullPointerException</code> when <code>foo</code> is null.</li>
+              <li>Method references of the form <code>name1::name2</code> or <code>primaryExpression::name</code> throws a <code>NullPointerException</code> when evaluated when <code>name1</code> or <code>primaryExpression</code> evaluates to null.<p>a note from the JLS here says that, <code>someInstance.someStaticMethod()</code> doesn&#x27;t throw an NPE, because <code>someStaticMethod</code> is static, but <code>someInstance::someStaticMethod</code> still throw an NPE!</p></li>
+            </ul>
+            <p>* Note that the JLS probably also says a lot about NPEs <em>indirectly</em>.</p>
+          </div>
+          <!-- hero --> 
+        </div>
+      </div>
+      <h2>Comments</h2>
+      <div id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="3790066e-4714-4283-a7b6-d73605021297"
+        data-page-id="Null Pointer Exception"
+        data-page-url="Null Pointer Exception"
+        data-page-title="Null Pointer Exception"
+      ></div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    </div>
+  </section>
+  <!-- header content section --> 
+
+  <!-- footer section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="col-md-6 left">
+        <h4>> dotWeblog</h4>
+      </div>
+      <div class="col-md-6 right">
+        <p>a web log.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section --> 
+
+  <!-- JS FILES --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  <script src="../js/bootstrap.min.js"></script> 
+  <script src="../js/jquery.fancybox.pack.js"></script> 
+  <script src="../js/retina.min.js"></script> 
+  <script src="../js/modernizr.js"></script> 
+  <script src="../js/main.js"></script>
+</body>
+</html>
