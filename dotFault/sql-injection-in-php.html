@@ -47,15 +47,13 @@
           <div class="hero-content">
             <p>If user input is inserted without modification into an SQL query, then the application becomes vulnerable to&nbsp;SQL injection, like in the following example:</p>
             <pre>
-              <code class="language-php">$unsafe_variable = $_POST['user_input'];
-
-              mysql_query("INSERT INTO `table` (`column`) VALUES ('$unsafe_variable')");
-              </code>
+              <code>$unsafe_variable = $_POST['user_input'];</code>
+              <code>mysql_query("INSERT INTO `table` (`column`) VALUES ('$unsafe_variable')");</code>
             </pre>
-            <p>That's because the user can input something like&nbsp;<code>value'); DROP TABLE table;--</code>, and the query becomes:</p>
+            <p>That's because the user can input something like&nbsp;
+              <code>value'); DROP TABLE table;--</code>, and the query becomes:</p>
             <pre>
-              <code class="language-sql">INSERT INTO `table` (`column`) VALUES('value'); DROP TABLE table;--')
-              </code>
+              <code>INSERT INTO `table` (`column`) VALUES('value'); DROP TABLE table;--')</code>
             </pre>
             <p>What can be done to prevent this from happening?</p><hr />
             <p>SQL injection remains a dominant and potent threat to web applications, exploiting vulnerabilities to manipulate database systems maliciously. This type of cybersecurity vulnerability occurs when an attacker inserts or "injects" malicious SQL statements into input fields for execution, potentially leading to unauthorized access and manipulation of sensitive data. Despite being one of the oldest types of web attacks, SQL injection continues to plague many web applications, emphasizing the need for robust defense mechanisms. This essay explores various methodologies and best practices for preventing SQL injection, ensuring data integrity and security in database management systems.</p>
@@ -64,14 +62,14 @@
               <li>
               <p><strong>Prepared Statements and Parameterized Queries: The First Line of Defense</strong></p>
               <p>The most effective and recommended method for preventing SQL injection is the use of prepared statements with parameterized queries. This technique ensures that the SQL statement and the input data are handled separately by the database engine, not allowing external input to interfere with the query structure.</p>
-              <h3><strong>Technical Implementation:</strong></h3>
+              <p><strong>Technical Implementation:</strong></p>
               <ul>
                 <li><strong>PHP with PDO</strong>: Utilizing PDO (PHP Data Objects) enables developers to write database-agnostic code with a consistent API for various database systems. PDO uses prepared statements and offers significant security benefits:</li>
                 <pre>
                   <code>$pdo = new PDO('mysql:host=localhost;dbname=database', 'user', 'password');</code>
                   <code>$stmt = $pdo-&gt;prepare("INSERT INTO table (column) VALUES (:value)");</code>
                   <code>$stmt-&gt;bindParam(':value', $value);</code>
-                  <code>$stmt-&gt;execute();</code><
+                  <code>$stmt-&gt;execute();</code>
                 </pre>
                 <li><strong>MySQLi</strong>: Another option for PHP developers, particularly when using MySQL databases, is MySQLi, which also supports prepared statements:</li>
                 <pre>
