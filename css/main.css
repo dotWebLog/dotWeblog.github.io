@@ -59,7 +59,7 @@ a:hover, a:focus {
 	transition: background-color, color, 0.3s;
 }
 body {
-	font-family: "Menlo";
+	font-family: "Courier New";
 	font-weight: 400;
 }
 ul, ol {
