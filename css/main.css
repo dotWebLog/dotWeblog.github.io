@@ -80,8 +80,19 @@ ul, ol {
 .extra-padding {
 	margin: 60px 0 0 100px;
 }
-pre code {
-	display: block;
+pre {
+    display: block;
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
 }
 /* ------------------------------------------------------------------------------
 	 Header
