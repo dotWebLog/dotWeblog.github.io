@@ -55,22 +55,20 @@
                 $xmlString = &lt;&lt;&lt;XML
                 &lt;books&gt;
                 &lt;book&gt;
-                    &lt;title&gt;PHP for Beginners&lt;/title&gt;
-                    &lt;author&gt;John Doe&lt;/author&gt;
-                  &lt;/book&gt;
-                  &lt;book&gt;
-                      &lt;title&gt;Advanced PHP Programming&lt;/title&gt;
-                      &lt;author&gt;Jane Doe&lt;/author&gt;
-                  &lt;/book&gt;
-              &lt;/books&gt;
-              XML;
-              
-              $xml = simplexml_load_string($xmlString);
-              
-              foreach ($xml-&gt;book as $book) {
+                &lt;title&gt;PHP for Beginners&lt;/title&gt;
+                &lt;author&gt;John Doe&lt;/author&gt;
+                &lt;/book&gt;
+                &lt;book&gt;
+                &lt;title&gt;Advanced PHP Programming&lt;/title&gt;
+                &lt;author&gt;Jane Doe&lt;/author&gt;
+                &lt;/book&gt;
+                &lt;/books&gt;
+                XML;
+                $xml = simplexml_load_string($xmlString);
+                foreach ($xml-&gt;book as $book) {
                   echo "Title: " . $book-&gt;title . "\\n";
                   echo "Author: " . $book-&gt;author . "\\n";
-              }
+                }
               </code></pre>
               <p>This code snippet demonstrates the ease of use of SimpleXML. You load the XML string with <code>simplexml_load_string()</code> and then iterate over the book elements, accessing their title and author properties directly. SimpleXML is advantageous due to its simplicity and the intuitive way it handles XML data, making it a preferred choice for simple XML processing tasks.</p>
               </li>
@@ -82,23 +80,21 @@
                 $htmlString = &lt;&lt;&lt;HTML
                 &lt;html&gt;
                 &lt;body&gt;
-                      &lt;div class="content"&gt;
-                          &lt;h1&gt;Welcome to PHP&lt;/h1&gt;
-                          &lt;p&gt;This is an example paragraph.&lt;/p&gt;
-                      &lt;/div&gt;
-                  &lt;/body&gt;
-              &lt;/html&gt;
-              HTML;
+                &lt;div class="content"&gt;
+                &lt;h1&gt;Welcome to PHP&lt;/h1&gt;
+                &lt;p&gt;This is an example paragraph.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+                HTML;
+                $dom = new DOMDocument();
+                @$dom-&gt;loadHTML($htmlString); // Suppress warnings for malformed HTML
+                $xpath = new DOMXPath($dom);
+                $nodes = $xpath-&gt;query("//div[@class='content']/*");
               
-              $dom = new DOMDocument();
-              @$dom-&gt;loadHTML($htmlString); // Suppress warnings for malformed HTML
-              
-              $xpath = new DOMXPath($dom);
-              $nodes = $xpath-&gt;query("//div[@class='content']/*");
-              
-              foreach ($nodes as $node) {
+                foreach ($nodes as $node) {
                   echo $node-&gt;nodeName . ": " . $node-&gt;nodeValue . "\\n";
-              }
+                }
               </code></pre>
               <p>This example illustrates the power of DOMDocument. By creating a DOMXPath object, you can perform complex queries to locate specific elements within the document. This method is particularly useful for processing HTML documents that may not be well-formed, as DOMDocument can handle various HTML peculiarities and still allow you to extract the necessary information.</p>
               </li>
@@ -110,26 +106,24 @@
                 $xmlString = &lt;&lt;&lt;XML
                 &lt;books&gt;
                 &lt;book&gt;
-                      &lt;title&gt;PHP for Beginners&lt;/title&gt;
-                      &lt;author&gt;John Doe&lt;/author&gt;
-                  &lt;/book&gt;
-                  &lt;book&gt;
-                      &lt;title&gt;Advanced PHP Programming&lt;/title&gt;
-                      &lt;author&gt;Jane Doe&lt;/author&gt;
-                  &lt;/book&gt;
-              &lt;/books&gt;
-              XML;
-              
-              $reader = new XMLReader();
-              $reader-&gt;xml($xmlString);
-              
-              while ($reader-&gt;read()) {
+                &lt;title&gt;PHP for Beginners&lt;/title&gt;
+                &lt;author&gt;John Doe&lt;/author&gt;
+                &lt;/book&gt;
+                &lt;book&gt;
+                &lt;title&gt;Advanced PHP Programming&lt;/title&gt;
+                &lt;author&gt;Jane Doe&lt;/author&gt;
+                &lt;/book&gt;
+                &lt;/books&gt;
+                XML;
+                $reader = new XMLReader();
+                $reader-&gt;xml($xmlString);
+                while ($reader-&gt;read()) {
                   if ($reader-&gt;nodeType == XMLReader::ELEMENT &amp;&amp; $reader-&gt;name == 'book') {
-                      $book = new SimpleXMLElement($reader-&gt;readOuterXML());
-                      echo "Title: " . $book-&gt;title . "\\n";
-                      echo "Author: " . $book-&gt;author . "\\n";
+                    $book = new SimpleXMLElement($reader-&gt;readOuterXML());
+                    echo "Title: " . $book-&gt;title . "\\n";
+                    echo "Author: " . $book-&gt;author . "\\n";
                   }
-              }
+                }
               </code></pre>
               <p>This example highlights the efficiency of XMLReader. By reading the XML document node by node, it avoids the memory overhead associated with loading the entire document. This method is particularly advantageous when working with very large XML documents or when processing needs to be performed in a streaming fashion.</p>
               </li>
@@ -139,22 +133,17 @@
               <p>To use PHP Simple HTML DOM Parser, you first need to install it via Composer. Once installed, you can load and manipulate HTML documents easily. Here is an example:</p>
               <pre><code>
                 require 'vendor/autoload.php';
-              
-              use simplehtmldom\\HtmlWeb;
-              
-              $html = HtmlWeb::load('&lt;html&gt;&lt;body&gt;&lt;div class="content"&gt;&lt;h1&gt;Welcome to PHP&lt;/h1&gt;&lt;p&gt;This is an example paragraph.&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;');
-              
-              foreach ($html-&gt;find('div.content') as $element) {
+                use simplehtmldom\\HtmlWeb;
+                $html = HtmlWeb::load('&lt;html&gt;&lt;body&gt;&lt;div class="content"&gt;&lt;h1&gt;Welcome to PHP&lt;/h1&gt;&lt;p&gt;This is an example paragraph.&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;');
+                foreach ($html-&gt;find('div.content') as $element) {
                   echo $element-&gt;innertext . "\\n";
-              }
-              
-              foreach ($html-&gt;find('h1') as $header) {
+                }
+                foreach ($html-&gt;find('h1') as $header) {
                   echo "Header: " . $header-&gt;plaintext . "\\n";
-              }
-              
-              foreach ($html-&gt;find('p') as $paragraph) {
+                }
+                foreach ($html-&gt;find('p') as $paragraph) {
                   echo "Paragraph: " . $paragraph-&gt;plaintext . "\\n";
-              }
+                }
               </code></pre>
               <p>This example demonstrates the simplicity and effectiveness of PHP Simple HTML DOM Parser. By providing methods to find elements by tag, id, class, and other attributes, it simplifies the process of extracting and manipulating HTML content. This library is particularly useful for tasks like web scraping or when dealing with complex HTML structures that require frequent and varied queries.</p>
               </li>
