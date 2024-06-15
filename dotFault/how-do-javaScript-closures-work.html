@@ -1,0 +1,142 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How do JavaScript closures work? - dotWeblog</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/flexslider.css">
+  <link rel="stylesheet" href="../css/jquery.fancybox.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animate.min.css">
+  <link rel="stylesheet" href="../css/font-icon.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script defer src="../js/log.js"></script>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+<body>
+  <!-- header top section -->
+  <section class="banner" role="banner">
+    <header id="header">
+      <div class="header-content clearfix"> <a class="logo" href="../index.html"><img src="../images/logo.jpg" alt=""></a>
+        <nav class="navigation" role="navigation">
+          <ul class="primary-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../fault.html">Fault</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+    </header>
+  </section>
+  <!-- header top section --> 
+  <!-- header content section -->
+  <section id="hero" class="section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-6 hero">
+          <div class="hero-content">
+            <h1>> How do JavaScript closures work?</h1>
+            <p>June 2024</p>
+          </div>
+          <!-- hero --> 
+        </div>
+        <div class="col-md-7 col-sm-6 hero">
+          <div class="hero-content">
+            <p>JavaScript closures are a foundational concept that enables powerful and flexible programming techniques. A closure is formed when a function is defined within another function, capturing the lexical environment in which it was declared. This means the inner function retains access to the variables and parameters of the outer function even after the outer function has finished executing.</p>
+            <p>To understand closures, it's essential to grasp JavaScript's lexical scoping. When a function is defined, it carries with it the scope in which it was created. This scope, known as the lexical environment, includes all local variables and parameters that were in-scope at the time the function was defined. When the outer function executes and returns the inner function, the inner function retains this lexical environment, effectively creating a closure.</p>
+            <p>Consider a basic example:</p>
+            <pre><code>
+              function outerFunction(outerVariable) {
+              return function innerFunction(innerVariable) {
+                  console.log('Outer Variable:', outerVariable);
+                  console.log('Inner Variable:', innerVariable);
+              };
+              }
+          
+              const closureInstance = outerFunction('outside');
+              closureInstance('inside');
+            </code></pre>
+            <p>In this example, <code>outerFunction</code> takes a parameter <code>outerVariable</code> and returns <code>innerFunction</code>. When <code>outerFunction</code> is called with the argument <code>'outside'</code>, it returns <code>innerFunction</code>, which forms a closure. This closure includes the scope of <code>outerFunction</code>, allowing <code>innerFunction</code> to access <code>outerVariable</code> even after <code>outerFunction</code> has completed its execution. When <code>closureInstance</code> is later invoked with the argument <code>'inside'</code>, it prints both the <code>outerVariable</code> and <code>innerVariable</code>.</p>
+            <p>Closures are particularly useful in several practical scenarios. One common use case is data privacy. Closures can be used to create private variables that are only accessible within the inner function. This technique is often used in JavaScript modules and object-oriented programming to protect the internal state of objects. For example, consider a counter function:</p>
+            <pre><code">
+              function createCounter() {
+              let count = 0;
+              return function() {
+                  count++;
+                  return count;
+              };
+              }
+          
+              const counter = createCounter();
+              console.log(counter()); // 1
+              console.log(counter()); // 2
+            </code></pre>
+            <p>In this example, the <code>count</code> variable is private to the <code>createCounter</code> function and can only be modified by the returned inner function. This encapsulation ensures that the <code>count</code> variable cannot be accessed or modified directly from outside the function, providing a measure of data privacy.</p>
+            <p>Closures also enable the creation of function factories, which are functions that return other functions. This allows for the creation of customized functions with specific environments. For example:</p>
+            <pre><code>
+              function createAdder(x) {
+              return function(y) {
+                  return x + y;
+              };
+              }
+          
+              const addFive = createAdder(5);
+              console.log(addFive(2)); // 7
+              console.log(addFive(10)); // 15
+            </code></pre>
+            <p>Here, <code>createAdder</code> returns a new function that adds a specific value (<code>x</code>) to its argument (<code>y</code>). The function <code>addFive</code> is created with <code>x</code> set to <code>5</code>, so it adds <code>5</code> to any number passed to it. This demonstrates how closures can be used to generate specialized functions dynamically.</p>
+            <p>Closures are also invaluable in event handling. When setting up event listeners, closures allow the callback function to retain access to the outer function's variables, enabling the callback to utilize these variables when the event occurs. For instance:</p>
+            <pre><code>
+              function setupListener(element, message) {
+              element.addEventListener('click', function() {
+                  console.log(message);
+              });
+              }
+          
+              setupListener(document.getElementById('myButton'), 'Button clicked!');
+            </code></pre>
+            <p>In this example, the anonymous function passed to <code>addEventListener</code> forms a closure that includes the <code>message</code> variable. This closure allows the callback to access <code>message</code> when the button is clicked, even though <code>setupListener</code> has long since finished executing.</p>
+            <p>The advantages of closures are numerous. They promote encapsulation by allowing functions to maintain private state, support modular programming by enabling the creation of reusable and composable functions, and allow functions to retain state across multiple invocations. This statefulness is particularly useful in scenarios like asynchronous programming, where callbacks need to maintain context over time.</p><p>However, closures also come with some caveats. One important aspect to consider is that closures capture variables by reference, not by value. This means if a variable in the outer function's scope is modified after the closure is created, the closure will see the updated value. Additionally, improper use of closures can lead to memory leaks, as the captured scope is not garbage-collected as long as the closure exists, potentially leading to increased memory usage.</p>
+            <p>Closures are a fundamental concept in JavaScript that enable powerful and flexible programming patterns. By capturing the lexical environment of their containing functions, closures provide access to variables and parameters even after the outer function has finished executing. This capability is widely used in data privacy, function factories, and event handling, making closures an essential tool for effective JavaScript programming. Understanding and leveraging closures allows developers to write more modular, maintainable, and expressive code.</p>
+          </div>
+          <!-- hero --> 
+        </div>
+      </div>
+      <h2>Comments</h2>
+      <div id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="3790066e-4714-4283-a7b6-d73605021297"
+        data-page-id="How do JavaScript closures work?"
+        data-page-url="How do JavaScript closures work?"
+        data-page-title="How do JavaScript closures work?"
+      ></div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    </div>
+  </section>
+  <!-- header content section --> 
+
+  <!-- footer section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="col-md-6 left">
+        <h4>> dotWeblog</h4>
+      </div>
+      <div class="col-md-6 right">
+        <p>a web log.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section --> 
+
+  <!-- JS FILES --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  <script src="../js/bootstrap.min.js"></script> 
+  <script src="../js/jquery.fancybox.pack.js"></script> 
+  <script src="../js/retina.min.js"></script> 
+  <script src="../js/modernizr.js"></script> 
+  <script src="../js/main.js"></script>
+</body>
+</html>
