@@ -1,0 +1,145 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Object Slicing in C++ - dotWeblog</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/flexslider.css">
+  <link rel="stylesheet" href="../css/jquery.fancybox.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animate.min.css">
+  <link rel="stylesheet" href="../css/font-icon.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script defer src="../js/log.js"></script>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+<body>
+  <!-- header top section -->
+  <section class="banner" role="banner">
+    <header id="header">
+      <div class="header-content clearfix"> <a class="logo" href="../index.html"><img src="../images/logo.jpg" alt=""></a>
+        <nav class="navigation" role="navigation">
+          <ul class="primary-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../fault.html">Fault</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+    </header>
+  </section>
+  <!-- header top section --> 
+  <!-- header content section -->
+  <section id="hero" class="section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-6 hero">
+          <div class="hero-content">
+            <h1>> Object Slicing in C++</h1>
+            <p>June 2024</p>
+          </div>
+          <!-- hero --> 
+        </div>
+        <div class="col-md-7 col-sm-6 hero">
+          <div class="hero-content">
+            <p>Object slicing in C++ is a phenomenon that occurs when an object of a derived class is assigned to an object of a base class, resulting in the loss of the derived class's specific attributes and behaviors. This means that the part of the object that is unique to the derived class is "sliced off," leaving only the base class portion. This can lead to significant issues in a program, especially when polymorphism and inheritance are heavily utilized.</p>
+            <p>To understand object slicing, it is essential first to grasp the concepts of inheritance and polymorphism in C++. Inheritance allows one class (the derived class) to inherit the properties and methods of another class (the base class). This promotes code reusability and establishes a relationship between classes. Polymorphism, on the other hand, enables objects of different classes to be treated as objects of a common base class. This is often achieved through pointers and references to base class types.</p><p>Object slicing typically occurs in three main scenarios: assignment, function arguments, and returning by value.</p>
+            <p>Firstly, consider the assignment scenario. When a derived class object is assigned to a base class object, only the base class portion of the derived object is copied, while the additional attributes and methods defined in the derived class are ignored. For example, suppose we have a base class <code>Base</code> and a derived class <code>Derived</code>. The derived class extends the base class with additional members. When we assign an object of <code>Derived</code> to an object of <code>Base</code>, the derived attributes are sliced off, leaving only the base attributes.</p>
+            <pre><code>
+              class Base {
+              public:
+                  int baseData;
+              };
+              
+              class Derived : public Base {
+              public:
+                int derivedData;
+              };
+              
+              Base b;
+              Derived d;
+              b = d; // Object slicing occurs here
+              </code></pre>
+              <p>In this case, after the assignment, the object <code>b</code> contains only the <code>baseData</code> member, and any data or functionality specific to <code>Derived</code>, such as <code>derivedData</code>, is lost.</p><p>The second scenario where object slicing occurs is when a function takes a base class object by value. When the function is called with a derived class object, only the base part is passed to the function, and the derived-specific parts are sliced off. For example:</p>
+              <pre><code>
+                void process(Base b) {
+                  // Only the Base part of b is available here
+                }
+              
+                Derived d;
+                process(d); // Object slicing occurs here
+              </code></pre>
+              <p>Here, the function <code>process</code> receives a copy of the base part of the object <code>d</code>. Any attributes or methods unique to <code>Derived</code> are not accessible within the function, leading to potential loss of important information or functionality.</p>
+              <p>The third scenario involves returning objects by value from a function. When a function returns an object of the base class type, and the object being returned is of a derived class type, object slicing occurs. For example:</p>
+              <pre><code>
+                Base createBase() {
+                  Derived d;
+                  return d; // Object slicing occurs here
+                }
+              </code></pre>
+              <p>In this example, the function <code>createBase</code> returns a <code>Base</code> object. Even though it creates a <code>Derived</code> object, the return type forces the object to be sliced, retaining only the base class portion.</p>
+              <p>Object slicing can lead to subtle and hard-to-debug issues, as the derived class's unique attributes and methods are lost. To avoid object slicing, C++ programmers can use pointers or references to base class objects instead of actual objects when dealing with polymorphism.</p>
+              <p>Using pointers is one way to circumvent object slicing. When a pointer to a base class object is used, it can point to objects of derived classes without slicing off the derived part. For example:</p>
+              <pre><code>
+                void process(Base* b) {
+                  // b can point to a Derived object without slicing
+                }
+              
+                Derived d;
+                process(&amp;d);
+              </code></pre>
+              <p>In this case, the function <code>process</code> takes a pointer to a <code>Base</code> object. When a pointer to a <code>Derived</code> object is passed, the full object, including the derived part, is accessible via the pointer.</p>
+              <p>Similarly, references can also be used to avoid object slicing. A reference to a base class object can refer to an object of a derived class without slicing off the derived part. For example:</p>
+              <pre><code>
+                void process(Base&amp; b) {
+                  // b can refer to a Derived object without slicing
+                }
+              
+                Derived d;
+                process(d);
+              </code></pre>
+              <p>Here, the function <code>process</code> takes a reference to a <code>Base</code> object. When a <code>Derived</code> object is passed, the reference can access the entire object, including the derived part.</p>
+              <p>By employing pointers or references, the full polymorphic behavior of objects is preserved, allowing derived class members and methods to be accessed appropriately. This approach not only prevents object slicing but also leverages the benefits of polymorphism, enabling more flexible and robust code.</p>
+              <p>Object slicing in C++ is a critical concept to understand when working with inheritance and polymorphism. It occurs when derived class objects are assigned to base class objects, passed by value to functions, or returned by value from functions. To prevent object slicing and retain the full functionality of derived class objects, pointers or references to base class types should be used. Understanding and avoiding object slicing is essential for writing effective and bug-free object-oriented code in C++.</p>
+          </div>
+          <!-- hero --> 
+        </div>
+      </div>
+      <h2>Comments</h2>
+      <div id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="3790066e-4714-4283-a7b6-d73605021297"
+        data-page-id="Object Slicing in C++"
+        data-page-url="Object Slicing in C++"
+        data-page-title="Object Slicing in C++"
+      ></div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    </div>
+  </section>
+  <!-- header content section --> 
+
+  <!-- footer section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="col-md-6 left">
+        <h4>> dotWeblog</h4>
+      </div>
+      <div class="col-md-6 right">
+        <p>a web log.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section --> 
+
+  <!-- JS FILES --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  <script src="../js/bootstrap.min.js"></script> 
+  <script src="../js/jquery.fancybox.pack.js"></script> 
+  <script src="../js/retina.min.js"></script> 
+  <script src="../js/modernizr.js"></script> 
+  <script src="../js/main.js"></script>
+</body>
+</html>
