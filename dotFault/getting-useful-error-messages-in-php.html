@@ -1,0 +1,95 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Getting Useful Error Messages in PHP - dotWeblog</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/flexslider.css">
+  <link rel="stylesheet" href="../css/jquery.fancybox.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animate.min.css">
+  <link rel="stylesheet" href="../css/font-icon.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script defer src="../js/log.js"></script>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+</head>
+<body>
+  <!-- header top section -->
+  <section class="banner" role="banner">
+    <header id="header">
+      <div class="header-content clearfix"> <a class="logo" href="../index.html"><img src="../images/logo.jpg" alt=""></a>
+        <nav class="navigation" role="navigation">
+          <ul class="primary-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../fault.html">Fault</a></li>
+            <li><a href="../gig.html">Gig</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+    </header>
+  </section>
+  <!-- header top section --> 
+  <!-- header content section -->
+  <section id="hero" class="section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-6 hero">
+          <div class="hero-content">
+            <h1>> Getting Useful Error Messages in PHP</h1>
+            <p>July 2024</p>
+          </div>
+          <!-- hero --> 
+        </div>
+        <div class="col-md-7 col-sm-6 hero">
+          <div class="hero-content">
+            <p>Obtaining useful error messages in PHP is essential for efficient debugging and development. To achieve this, one must configure PHP to provide detailed error reports. This process begins with enabling error reporting in the PHP configuration file, commonly known as <code>php.ini</code>. This file is the default configuration file for running applications that require PHP and can typically be found in locations such as <code>/etc/php.ini</code>, <code>/usr/local/php/php.ini</code>, or within the web server’s configuration directory.</p>
+            <p>In the <code>php.ini</code> file, the <code>error_reporting</code> directive should be set to <code>E_ALL</code> to report all errors. Additionally, the <code>display_errors</code> and <code>display_startup_errors</code> directives should be set to <code>On</code>. The former ensures that PHP outputs errors to the browser, while the latter displays errors that occur during PHP’s startup sequence. These settings provide a comprehensive view of potential issues in the PHP code.</p>
+            <p>If access to the <code>php.ini</code> file is restricted, such as in shared hosting environments, error reporting can be enabled directly within a PHP script. At the beginning of the script, one can include the following lines: <code>error_reporting(E_ALL); ini_set('display_errors', 1); ini_set('display_startup_errors', 1);</code>. These commands override the default configuration to display errors, ensuring that developers can see all issues directly in the browser.</p>
+            <p>Custom error handlers offer another layer of control over how errors are managed. By defining a custom error handler function, developers can log errors to a file, send them via email, or display them in a custom format. For instance, a function named <code>customError</code> can be registered using <code>set_error_handler("customError");</code>. This function can be tailored to log errors or provide more detailed messages that are helpful for debugging.</p>
+            <p>In production environments, displaying errors to end users is not advisable as it may expose sensitive information. Instead, logging errors is a safer approach. This can be configured in the <code>php.ini</code> file by setting <code>log_errors</code> to <code>On</code> and specifying the <code>error_log</code> path where errors should be recorded. Alternatively, these settings can be applied within a PHP script using <code>ini_set('log_errors', 1); ini_set('error_log', '/path/to/your/php-error.log');</code>. Logging errors ensures that developers can review them without exposing any details to users.</p>
+            <p>Differentiating between development and production environments is crucial for applying appropriate error reporting settings. Using environment variables or other configuration mechanisms, one can switch settings based on the environment. For instance, retrieving the environment variable <code>APP_ENV</code> and applying settings conditionally allows detailed error reporting in development while logging errors in production. This ensures that developers have access to detailed error information during development without compromising security in a live environment.</p>
+            <p>Additionally, utilizing debugging tools such as Xdebug can greatly enhance the debugging process. Xdebug is a powerful PHP extension that provides features like stack traces, enhanced error messages, and debugging capabilities. After installing Xdebug, which can be done via package managers, it must be configured in the <code>php.ini</code> file. Adding lines such as <code>zend_extension="path/to/xdebug.so"; xdebug.mode=debug; xdebug.start_with_request=yes</code> enables debugging. Xdebug can also be integrated with IDEs like PhpStorm or Visual Studio Code, allowing developers to set breakpoints, inspect variables, and perform detailed analyses of their code.</p>
+            <p>In summary, obtaining useful error messages in PHP involves configuring the <code>php.ini</code> file or scripts to enable comprehensive error reporting, using custom error handlers, logging errors in production environments, differentiating between development and production settings, and leveraging debugging tools like Xdebug. These practices ensure that developers can efficiently identify and resolve issues, leading to more robust and secure PHP applications.</p>
+          </div>
+          <!-- hero --> 
+        </div>
+      </div>
+      <h2>Comments</h2>
+      <div id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="3790066e-4714-4283-a7b6-d73605021297"
+        data-page-id="Getting Useful Error Messages in PHP"
+        data-page-url="Getting Useful Error Messages in PHP"
+        data-page-title="Getting Useful Error Messages in PHP"
+      ></div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    </div>
+  </section>
+  <!-- header content section --> 
+
+  <!-- footer section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="col-md-6 left">
+        <h4>> dotWeblog</h4>
+      </div>
+      <div class="col-md-6 right">
+        <p>a web log.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section --> 
+
+  <!-- JS FILES --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  <script src="../js/bootstrap.min.js"></script> 
+  <script src="../js/jquery.fancybox.pack.js"></script> 
+  <script src="../js/retina.min.js"></script> 
+  <script src="../js/modernizr.js"></script> 
+  <script src="../js/main.js"></script>
+</body>
+</html>
