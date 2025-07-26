@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Software You Almost Didn’t Build - dotWEBLOG</title>
+    <meta name="description" content="It was just a passing idea. You saw the problem and thought, “Someone must’ve solved this already.” You searched. You found tools that sort of helped,...">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .prose { max-width: none; }
+        .prose p { margin-bottom: 1rem; }
+        .prose h1, .prose h2, .prose h3 { margin-top: 2rem; margin-bottom: 1rem; }
+        .prose ul { margin-bottom: 1rem; }
+        .prose pre { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <nav class="mb-8">
+            <a href="index.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                ← Back to Blog
+            </a>
+        </nav>
+        
+        <article class="bg-white rounded-lg shadow-md p-8">
+            <header class="mb-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">The Software You Almost Didn’t Build</h1>
+                <div class="flex items-center justify-between text-gray-600 mb-4">
+                    <div>
+                        By @_dotWeblog • 7/26/2025
+                    </div>
+                    <div class="text-sm">
+                        Category: Money-Making Ideas
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                            Software
+                        </span>
+                    
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                            Build
+                        </span>
+                    
+                </div>
+            </header>
+            
+            <div class="prose max-w-none text-gray-800 leading-relaxed">
+                <div class="prose max-w-none"><p class="mb-4">It was just a passing idea. You saw the problem and thought, “Someone must’ve solved this already.” You searched. You found tools that sort of helped, but they were too bloated, too expensive, or too generic. You figured you’d live with the workaround, like everyone else. But the friction stayed with you. Every time you had to repeat the same tedious process, that quiet voice returned: What if I just built the better version?</p><p class="mb-4">You didn’t plan to turn it into a business. You only wanted to stop wasting time. So you sat down one weekend and hacked together something rough. Not elegant. Not even complete. But functional. And instantly, your workflow was smoother. That little patch of code saved you more time in a day than you expected. You felt it — the exhale, the lift. And that’s when you realized: this isn’t just a fix. It’s a product.</p><p class="mb-4">Still, you hesitated. Doubts are louder when things are small. Why would anyone pay for this? Isn’t it too simple? But you shipped it anyway — quietly, on a small page, with a note that said, “Here if you need it.” That’s when something surprising happened: people did need it.</p><p class="mb-4">Not in the thousands. Not all at once. But steadily. A few strangers found it. They used it. They emailed you to say thank you. One of them asked, “Do you have a paid version?” That’s when it stopped being a hobby. That’s when it became leverage.</p><p class="mb-4">Money didn’t rush in. It trickled. Enough to notice. Enough to start thinking differently. You cleaned up the UI. You added a way to upgrade. You made onboarding smoother. And then, like clockwork, the quietest kind of business began to take root.</p><p class="mb-4">Your inbox filled with feedback, not complaints. Users didn’t want more features — they wanted the one thing you already gave them, but faster, more stable, better supported. That’s when you understood: good software doesn’t need to impress. It needs to serve.</p><p class="mb-4">And when it serves well, it earns.</p><p class="mb-4">The money comes in through the cracks — slowly at first, and then steadily. You stop checking metrics obsessively. You stop dreaming about growth hacks. You just keep making the product solid. Because now, it’s doing something for other people that’s worth paying for. Not because you sold them on it, but because they don’t want to work without it.</p><p class="mb-4">Years later, that little idea — the one you almost didn’t build — is still running. Still helping. Still earning. It’s not flashy. But it’s real. It’s yours. And it changed your life not by going viral, but by being useful, honest, and quietly needed.</p><p class="mb-4">That’s how software makes money. Not with noise. But with presence.</div>
+            </div>
+        </article>
+        
+        <footer class="text-center mt-12 pt-8 border-t border-gray-200">
+            <p class="text-gray-600">© 2025 @_dotWeblog. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <!-- Visitor Tracking Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the User-Agent string
+            var userAgent = navigator.userAgent;
+
+            // Get the current page URL
+            var pageUrl = window.location.href;
+
+            // Fetch the IP address from a server-side endpoint
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    // Log the visitor with IP, User-Agent, and URL
+                    logVisitor(data.ip, userAgent, pageUrl);
+                })
+                .catch(error => {
+                    console.error('Error fetching the IP:', error);
+                    // Log only with User-Agent and URL in case of an error
+                    logVisitor("IP unavailable", userAgent, pageUrl);
+                });
+        });
+
+        function logVisitor(ip, userAgent, url) {
+            // Get the current date and time
+            var timestamp = new Date().toLocaleString();
+
+            // Create a log entry
+            var logEntry = `${timestamp} - Visitor logged, IP: ${ip}, Browser: ${userAgent}, URL: ${url}`;
+
+            // Send a POST request to RequestBin with the log entry
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://eofta18tzugzjn1.m.pipedream.net", true);
+            xhr.setRequestHeader("Content-Type", "text/plain");
+            xhr.send(logEntry);
+        }
+    </script>
+</body>
+</html>
