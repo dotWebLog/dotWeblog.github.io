@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+  <script defer src="src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="#">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <h2 id="post-title">Archives</h2>
+        <section id="archives" class="archive" aria-label="Archive teaser">
+          <div class="card">
+            <h3>The Endless Pull of the Infinite Scroll</h3>
+            <p>Scrolling through a social media feed can feel like drifting through a dream.</p>
+            <a class="readmore" href="dotArchive/post5.html">Read</a>
+          </div>
+          <div class="card">
+            <h3>Language of the Internet</h3>
+            <p>Every generation has its own slang, but online slang evolves at a speed that makes traditional language shifts look glacial.</p>
+            <a class="readmore" href="dotArchive/post4.html">Read</a>
+          </div>
+          <div class="card">
+            <h3>Going Viral</h3>
+            <p>There is a strange magic in watching something go viral.</p>
+            <a class="readmore" href="dotArchive/post3.html">Read</a>
+          </div>
+          <div class="card">
+            <h3>Where Subcultures Thrive</h3>
+            <p>The web has always been a place where subcultures thrive, often hidden in plain sight.</p>
+            <a class="readmore" href="dotArchive/post2.html">Read</a>
+          </div>
+          <div class="card">
+            <h3>Internet Rhythm</h3>
+            <p>The internet has a rhythm all its own, a heartbeat that pulses through memes, trends, and the communities we build online.</p>
+            <a class="readmore" href="dotArchive/post1.html">Read</a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

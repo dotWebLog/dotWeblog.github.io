@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="#">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #4 · <time datetime="2025-08-15">August 15, 2025</time></div>
+        <h2 id="post-title">Language of the Internet</h2>
+        <p>Every generation has its own slang, but online slang evolves at a speed that makes traditional language shifts look glacial. Entire phrases can rise to popularity, peak, and vanish in a matter of weeks, leaving latecomers bewildered when they finally encounter them. This rapid cycle has turned the internet into a living laboratory of language, where meaning is flexible, context is everything, and inside jokes become the building blocks of communication.</p>
+        <p>Much of this language emerges from specific communities. A term coined in a gaming forum might migrate to a meme page, then spill into mainstream social media. Along the way, it mutates. Spelling changes, tone shifts, and new contexts attach themselves to the original word until it becomes something entirely different. To someone outside the loop, the phrase might seem nonsensical, but to those in the know, it can instantly evoke a shared history or mood.</p>
+        <p>What makes internet slang unique is its visual dimension. Words are rarely just words—they’re often paired with images, GIFs, or emojis that add nuance. An expression might be understood differently depending on whether it’s followed by a crying-laughing emoji, an eye-roll GIF, or an old reaction image pulled from a decade-old meme. The layers of meaning make these phrases more like cultural artifacts than simple vocabulary, bound tightly to the moment and medium in which they exist.</p>
+        <p>But there’s a bittersweet aspect to this constant churn. Slang that once felt fresh and exclusive can lose its edge when it becomes too popular. The thrill of being “in on it” fades when the term shows up in corporate advertising or is awkwardly used by out-of-touch public figures. At the same time, the speed of change means there is always something new on the horizon. For those who embrace it, the evolving language of the internet isn’t a code to be cracked—it’s an ongoing conversation, one that never really ends.</p>
+        <p>In this way, online slang is more than just words; it’s a snapshot of culture in motion. It reflects the humor, creativity, and adaptability of the people who use it, constantly shaped by the platforms that host it and the communities that breathe life into it. Understanding it isn’t just about keeping up—it’s about appreciating the ways in which language can bend, twist, and transform in the fast-moving current of digital life.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

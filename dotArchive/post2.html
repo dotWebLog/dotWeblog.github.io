@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="#">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #2 · <time datetime="2025-08-14">August 14, 2025</time></div>
+        <h2 id="post-title">Where Subcultures Thrive</h2>
+        <p>The web has always been a place where subcultures thrive, often hidden in plain sight. What appears on a trending feed is only the tip of the iceberg; beneath it lies a sprawling network of communities, each with its own rules, humor, and rituals. From obscure forums to Discord servers, these microcosms are where the internet’s creativity often sparks. A joke might start in one corner and, through the alchemy of sharing and remixing, become a global phenomenon. Observing these transformations is like watching culture evolve in real time, accelerated by the speed of connection and the ease of participation.</p>
+        <p>One of the most fascinating aspects of these spaces is how they balance anonymity and intimacy. People who have never met face-to-face can form bonds as strong and as meaningful as those in the physical world. Inside these communities, identity is fluid. Users experiment with personas, try out ideas, and explore humor in ways that would feel risky or awkward offline. And yet, this very fluidity also makes the digital landscape unpredictable. Norms shift quickly, trends flare and fade, and what was once cutting-edge can become passé almost overnight. Participating in these spaces requires attentiveness, adaptability, and a sense of play.</p>
+        <p>The memes, GIFs, and viral videos that emerge from these communities are more than just entertainment. They act as a shared language, a shorthand that signals understanding and belonging. To recognize a meme is to understand a story, a joke, or a critique that hundreds or thousands of others already “get.” This cultural literacy can create a sense of inclusion and connection, but it also highlights the pace at which the internet moves. What is humorous or meaningful today may be incomprehensible tomorrow, replaced by the next wave of content. In this sense, internet culture is simultaneously fleeting and enduring—fleeting in its rapid turnover, yet enduring in the patterns, references, and shared experiences it leaves behind.</p>
+        <p>At its core, digital culture mirrors human behavior magnified. It showcases our desires for recognition, our creativity, our need for connection, and our appetite for novelty. Watching a meme travel across platforms, seeing a community rally around an idea, or noticing the subtle ways online spaces evolve can reveal as much about ourselves as it does about technology. The internet, with all its quirks and chaos, is a living experiment in collective expression—a place where the ordinary becomes extraordinary, and where every click, comment, and share contributes to an ever-unfolding story.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

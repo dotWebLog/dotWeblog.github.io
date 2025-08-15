@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="#">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #1 · <time datetime="2025-08-14">August 14, 2025</time></div>
+        <h2 id="post-title">Internet Rhythm</h2>
+        <p>The internet has a rhythm all its own, a heartbeat that pulses through memes, trends, and the communities we build online. It is a place where ideas can spread faster than a rumor in a small town, yet also where a single post can spark laughter, outrage, or reflection in thousands of strangers scattered across the globe. There is something mesmerizing about the way certain images, phrases, or videos capture the collective imagination, traveling from obscure corners of the web to mainstream consciousness seemingly overnight.</p>
+        <p>Take, for instance, the life of a meme. It is born quietly, perhaps in a niche forum or a small social media thread, and yet it carries a potential that far exceeds its humble beginnings. Its power lies not only in humor or relatability but in its ability to evolve. One person adds a caption, another changes an image, and suddenly what started as a tiny joke has transformed into a cultural marker that everyone online recognizes. These digital artifacts do more than entertain; they reveal shared anxieties, desires, and the quirks of the human mind in the 21st century.</p>
+        <p>The communities behind these trends are equally fascinating. From Discord servers dedicated to particular fandoms to forums that have existed for decades, these spaces are incubators for creativity and connection. In these corners of the web, strangers become collaborators, critics, and friends. People who would never meet in real life find themselves engaged in debates, sharing art, or celebrating the absurdity of the latest viral phenomenon. These interactions demonstrate the remarkable social fabric that the internet weaves, stitching together individuals across continents with a common thread of curiosity and passion.</p>
+        <p>Yet, for all the joy and connection, there is a tension that comes with living so much of our lives online. The very speed that allows a meme to flourish can also amplify misinformation, misunderstandings, and fleeting trends that fade before their significance is fully grasped. It is a digital ecosystem that mirrors our own complexity: vibrant, unpredictable, and endlessly evolving. To understand the internet is to understand a reflection of ourselves—our creativity, our humor, our anxieties, and the ways we seek connection in a world that increasingly blurs the line between virtual and real.</p>
+        <p>In exploring these digital landscapes, one begins to see that the internet is not just a tool or a platform; it is a living culture. Every post, comment, or shared image contributes to a collective story that is constantly unfolding. By paying attention to its rhythms, its jokes, and its communities, we gain insight not just into the web itself but into the human experiences it amplifies. What we find online is, in many ways, a mirror of the world we inhabit offline—a reflection rendered in pixels, hashtags, and the shared laughter of a thousand strangers who, for a moment, understand each other perfectly.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

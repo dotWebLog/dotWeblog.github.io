@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+  <script defer src="src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="#">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <h2 id="post-title">About</h2>
+        <p>The internet is more than a collection of websites and apps—it’s a living, shifting culture that shapes how we speak, laugh, create, and connect. Here, we explore that culture in all its forms: the memes that spread like wildfire, the subcultures that thrive in hidden corners, the slang that changes faster than we can keep up, and the trends that burn brightly before fading into the digital archives.</p>
+        <p>This space exists for anyone curious about life online. It’s for those who love the inside jokes only the internet could create, who find themselves wondering why certain videos take over their feeds, and who notice the quiet ways digital life has woven itself into our daily routines. We look at these moments not just as entertainment, but as snapshots of human behavior in the digital age—fragments of a bigger story about how technology reflects and shapes who we are.</p>
+        <p>The goal isn’t to simply chase what’s trending, but to understand it. To pause and ask why a certain meme resonates, how a viral moment spreads, or what makes an online community thrive. Sometimes the answer is silly, sometimes profound, often both at once.</p>
+        <p>In a world that moves at the speed of the scroll, this is a place to slow down and take a closer look at the culture we’re creating together, one post, one laugh, one shared link at a time.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
