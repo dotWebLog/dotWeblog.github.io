@@ -1,76 +1,330 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>dotWeblog — Digital Culture & Internet Life</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="src/styles.css">
-  <link rel="icon" href="src/favicon.ico" type="image/x-icon">
-  <script defer src="src/log.js"></script>
-  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dotWEBLOG</title>
+    <meta name="description" content="A calm, curious space for essays, experiments, and discoveries about the web.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .prose { max-width: none; }
+        .prose p { margin-bottom: 1rem; }
+        .prose h1, .prose h2, .prose h3 { margin-top: 2rem; margin-bottom: 1rem; }
+        .prose ul { margin-bottom: 1rem; }
+        .prose pre { margin-bottom: 1rem; }
+    </style>
 </head>
-<body>
-  <header>
-    <a class="brand" href="index.html">
-      <span class="dot" aria-hidden="true"></span>
-      <span class="wordmark">dotWeblog</span>
-    </a>
-    <nav aria-label="Primary">
-      <a href="about.html">About</a>
-      <a href="archives.html">Archives</a>
-    </nav>
-  </header>
+<body class="bg-gray-50">
+    <div class="flex min-h-screen">
+        <div class="flex-1 max-w-4xl mx-auto px-4 py-8">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">dotWEBLOG</h1>
+                <p class="text-xl text-gray-600">A calm, curious space for essays, experiments, and discoveries about the web.</p>
+            </header>
+            
+            <main class="space-y-8">
+                
+                    <article class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-bold mb-3">
+                            <a href="why-the-blog-still-matters.html" class="text-gray-900 hover:text-blue-600">
+                                Why the Blog Still Matters
+                            </a>
+                        </h2>
+                        <div class="text-gray-600 text-sm mb-4">
+                            9/15/2025 • 📝 dot.Essay
+                        </div>
+                        <p class="text-gray-700 mb-4">In an age dominated by endless feeds, ephemeral stories, and algorithm-driven content, the humble blog might seem like a relic. Yet, there is somethin...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        blog
+                                    </span>
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        web
+                                    </span>
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        space
+                                    </span>
+                                
+                            </div>
+                            <a href="why-the-blog-still-matters.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read more →
+                            </a>
+                        </div>
+                    </article>
+                
+                    <article class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-bold mb-3">
+                            <a href="thinking-in-hypertext-not-hashtags.html" class="text-gray-900 hover:text-blue-600">
+                                Thinking in hypertext, not hashtags.
+                            </a>
+                        </h2>
+                        <div class="text-gray-600 text-sm mb-4">
+                            9/15/2025 • 🌱 Notes & Fragments
+                        </div>
+                        <p class="text-gray-700 mb-4">Today I stumbled across a tiny blog with only five posts. Each one was a short reflection, a poem about code and life, a small universe contained in a...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        short
+                                    </span>
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        reflection
+                                    </span>
+                                
+                            </div>
+                            <a href="thinking-in-hypertext-not-hashtags.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read more →
+                            </a>
+                        </div>
+                    </article>
+                
+                    <article class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-bold mb-3">
+                            <a href="dot-words.html" class="text-gray-900 hover:text-blue-600">
+                                dot.words
+                            </a>
+                        </h2>
+                        <div class="text-gray-600 text-sm mb-4">
+                            9/15/2025 • 🎨 Experiments
+                        </div>
+                        <p class="text-gray-700 mb-4">This is a mini interactive poem. Hovering over certain words subtly changes the links embedded in them, revealing new layers of meaning and connection...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        poem
+                                    </span>
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        interactive
+                                    </span>
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        text
+                                    </span>
+                                
+                            </div>
+                            <a href="dot-words.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read more →
+                            </a>
+                        </div>
+                    </article>
+                
+                    <article class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-bold mb-3">
+                            <a href="rss-the-original-algorithm-free-feed.html" class="text-gray-900 hover:text-blue-600">
+                                RSS: The Original Algorithm-Free Feed
+                            </a>
+                        </h2>
+                        <div class="text-gray-600 text-sm mb-4">
+                            9/15/2025 • 🌐 Web Culture & Tech
+                        </div>
+                        <p class="text-gray-700 mb-4">In a world where nearly everything online is curated by algorithms, RSS remains a quiet act of liberation. It’s a technology most people overlook, yet...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        rss
+                                    </span>
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        algorithm
+                                    </span>
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        feed
+                                    </span>
+                                
+                            </div>
+                            <a href="rss-the-original-algorithm-free-feed.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read more →
+                            </a>
+                        </div>
+                    </article>
+                
+                    <article class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-bold mb-3">
+                            <a href="guest-essay-how-i-ve-blogged-for-15-years.html" class="text-gray-900 hover:text-blue-600">
+                                Guest Essay: How I’ve Blogged for 15 Years
+                            </a>
+                        </h2>
+                        <div class="text-gray-600 text-sm mb-4">
+                            9/15/2025 • 👥 Community Voices
+                        </div>
+                        <p class="text-gray-700 mb-4">I started blogging when most people still thought the web was just a place for news and shopping. Over the years, I’ve written hundreds of posts — som...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        blogging
+                                    </span>
+                                
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                                        essay
+                                    </span>
+                                
+                            </div>
+                            <a href="guest-essay-how-i-ve-blogged-for-15-years.html" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read more →
+                            </a>
+                        </div>
+                    </article>
+                
+            </main>
+            
+            <footer class="text-center mt-12 pt-8 border-t border-gray-200">
+                <p class="text-gray-600">© 2025 @_dotWeblog. All rights reserved.</p>
+            </footer>
+        </div>
+        
+        <!-- Sidebar -->
+        <aside class="w-80 bg-white border-l border-gray-200 p-6 space-y-8">
+            <!-- Blog Archive -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                    </svg>
+                    Blog Archive
+                </h3>
+                
+                    <div class="space-y-4">
+                        
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-800 text-sm">2025</h4>
+                                <div class="space-y-1 ml-4">
+                                    
+                                        <div class="space-y-1">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-sm text-gray-600">September</span>
+                                                <span class="text-xs text-gray-400">(5)</span>
+                                            </div>
+                                            <div class="ml-2 space-y-1">
+                                                
+                                                    <a href="guest-essay-how-i-ve-blogged-for-15-years.html" class="block text-xs text-gray-500 hover:text-blue-600 px-2 py-1 rounded transition-colors truncate" title="Guest Essay: How I’ve Blogged for 15 Years">
+                                                        Guest Essay: How I’ve Blogged for 15 Years
+                                                    </a>
+                                                
+                                                    <a href="rss-the-original-algorithm-free-feed.html" class="block text-xs text-gray-500 hover:text-blue-600 px-2 py-1 rounded transition-colors truncate" title="RSS: The Original Algorithm-Free Feed">
+                                                        RSS: The Original Algorithm-Free Feed
+                                                    </a>
+                                                
+                                                    <a href="why-the-blog-still-matters.html" class="block text-xs text-gray-500 hover:text-blue-600 px-2 py-1 rounded transition-colors truncate" title="Why the Blog Still Matters">
+                                                        Why the Blog Still Matters
+                                                    </a>
+                                                
+                                                    <a href="dot-words.html" class="block text-xs text-gray-500 hover:text-blue-600 px-2 py-1 rounded transition-colors truncate" title="dot.words">
+                                                        dot.words
+                                                    </a>
+                                                
+                                                    <a href="thinking-in-hypertext-not-hashtags.html" class="block text-xs text-gray-500 hover:text-blue-600 px-2 py-1 rounded transition-colors truncate" title="Thinking in hypertext, not hashtags.">
+                                                        Thinking in hypertext, not hashtags.
+                                                    </a>
+                                                
+                                            </div>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+            </div>
 
-  <div class="wrap">
-    <section class="hero" aria-label="Intro">
-      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
-      <p>Where We Discover Digital Culture & Internet Life</p>
-    </section>
-    <main>
-      <article class="post" aria-labelledby="post-title">
-        <div class="meta">Post #16 · <time datetime="2025-09-11">September 11, 2025</time></div>
-        <h2 id="post-title">The Midnight Scroll</h2>
-        <center><img src="images/post-16.jpg" alt="The Midnight Scroll"></center>
-        <p>The room was dark, except for the glow of my phone. Endless posts, endless faces, endless lives not my own.</p>  
-        <p>Each swipe pulled me deeper—birthdays I missed, smiles I couldn’t share, victories that weren’t mine. Connection disguised as distance.</p>  
-        <p>Outside, the world was asleep. Inside, I was awake, scrolling through the lives of others, searching for pieces of myself.</p>
-      </article>
+            
+                <!-- Advertisement Section -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Sponsored</h3>
+                    <div class="space-y-4">
+                        
+                            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 border-blue-200 border rounded-lg p-4">
+                                <div class="text-xs font-medium mb-2 text-blue-600">ADVERTISEMENT</div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Web Development Tools</h4>
+                                <p class="text-sm text-gray-600 mb-3">Boost your productivity with our premium development toolkit.</p>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-600 hover:text-blue-800">Learn More →</a>
+                            </div>
+                        
+                            <div class="bg-gradient-to-br from-green-50 to-emerald-100 border-green-200 border rounded-lg p-4">
+                                <div class="text-xs font-medium mb-2 text-green-600">SPONSORED</div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Cloud Hosting</h4>
+                                <p class="text-sm text-gray-600 mb-3">Deploy your projects with lightning-fast performance.</p>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-green-600 hover:text-green-800">Get Started →</a>
+                            </div>
+                        
+                            <div class="bg-gradient-to-br from-purple-50 to-violet-100 border-purple-200 border rounded-lg p-4">
+                                <div class="text-xs font-medium mb-2 text-purple-600">FEATURED</div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Design Resources</h4>
+                                <p class="text-sm text-gray-600 mb-3">Premium UI components and design systems for modern apps.</p>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-purple-600 hover:text-purple-800">Explore →</a>
+                            </div>
+                        
+                    </div>
+                </div>
+            
 
-      <section id="archives" class="archive" aria-label="Archive teaser">
-          <div class="card">
-            <h3>Big Spaces, Small Spaces</h3>
-            <p>Every corner of the internet carries with it a sense of scale.</p>
-            <a class="readmore" href="dotArchive/post15.html">Read</a>
-          </div>
-          <div class="card">
-            <h3>The Forgotten Draft</h3>
-            <p>I stared at the unsent message. Words I had arranged carefully, pressed together in a moment of bravery.</p>
-            <a class="readmore" href="dotArchive/post14.html">Read</a>
-          </div>
-          <div class="card">
-            <h3>The Typing Bubble</h3>
-            <p>Three dots blinked.</p>
-            <a class="readmore" href="dotArchive/post13.html">Read</a>
-          </div>
-          <div class="card">
-            <h3>The Unfinished Nature of Online Culture</h3>
-            <p>One of the quiet truths of the internet is that almost nothing online is finished.</p>
-            <a class="readmore" href="dotArchive/post12.html">Read</a>
-          </div>
-      </section>
-    </main>
+            <!-- Blog Stats -->
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h4 class="font-medium text-gray-900 mb-3">Blog Statistics</h4>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Total Posts:</span>
+                        <span class="font-medium">5</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Categories:</span>
+                        <span class="font-medium">5</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Tags:</span>
+                        <span class="font-medium">13</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Visitor Tracking Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the User-Agent string
+            var userAgent = navigator.userAgent;
 
-    <footer>
-      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
-    </footer>
-  </div>
+            // Get the current page URL
+            var pageUrl = window.location.href;
 
-  <script>
-    // Set current year & add a tiny flourish for first-load
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+            // Fetch the IP address from a server-side endpoint
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    // Log the visitor with IP, User-Agent, and URL
+                    logVisitor(data.ip, userAgent, pageUrl);
+                })
+                .catch(error => {
+                    console.error('Error fetching the IP:', error);
+                    // Log only with User-Agent and URL in case of an error
+                    logVisitor("IP unavailable", userAgent, pageUrl);
+                });
+        });
+
+        function logVisitor(ip, userAgent, url) {
+            // Get the current date and time
+            var timestamp = new Date().toLocaleString();
+
+            // Create a log entry
+            var logEntry = `${timestamp} - Visitor logged, IP: ${ip}, Browser: ${userAgent}, URL: ${url}`;
+
+            // Send a POST request to RequestBin with the log entry
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://eofta18tzugzjn1.m.pipedream.net", true);
+            xhr.setRequestHeader("Content-Type", "text/plain");
+            xhr.send(logEntry);
+        }
+    </script>
 </body>
 </html>
