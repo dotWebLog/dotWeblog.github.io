@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../index.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../about.html">About</a>
+      <a href="../archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #10 · <time datetime="2025-08-30">August 30, 2025</time></div>
+        <h2 id="post-title">Closeness and Distance in Online Connection</h2>
+        <p>The internet has a way of shrinking distances while stretching realities. Two people on opposite sides of the planet can talk in real time, share jokes, or collaborate on a project, as if geography barely matters. At the same time, that very immediacy can make the online world feel detached from the rhythms of everyday life. Messages arrive instantly, responses are expected quickly, and attention shifts faster than most of us can process.</p>
+        <p>This creates a paradox: we are more connected than ever, yet often feel strangely distant. Online friendships can be rich and meaningful, sustained through years of messages, memes, and late-night conversations. But they can also feel fragile, vulnerable to the smallest disruption—a missed reply, a platform change, or an algorithm that suddenly hides someone from view. The bonds are real, but the infrastructure they rest on is constantly shifting.</p>
+        <p>Part of the challenge is that digital communication flattens the cues we rely on offline. Tone, body language, and context are often reduced to text, emojis, or reaction buttons. We fill in the gaps ourselves, sometimes accurately, sometimes not. A short message can feel curt, even if it was meant casually. A delayed response can feel like rejection, even when it’s just a busy day. In this way, the closeness of online connection can also magnify uncertainty.</p>
+        <p>And yet, people return to these spaces because they offer something rare: the possibility of connection beyond circumstance. Shared interests, niche communities, and friendships that would never form otherwise all become possible online. Even when fragile, these connections matter. They remind us that intimacy isn’t bound only by physical presence—it can also be built through shared words, images, and small acts of attention across distance.</p>
+        <p>The task, then, is not to dismiss these connections as “less real,” but to recognize their unique texture. Online relationships demand patience, generosity, and a willingness to exist within the gaps of imperfect communication. They require us to balance immediacy with understanding, and to remember that behind every message, post, or reaction is a person navigating the same messy blend of closeness and distance that defines digital life.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

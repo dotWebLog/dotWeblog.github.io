@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../index.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../about.html">About</a>
+      <a href="../archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #15 · <time datetime="2025-09-08">September 8, 2025</time></div>
+        <h2 id="post-title">Big Spaces, Small Spaces</h2>
+        <p>Every corner of the internet carries with it a sense of scale. Some spaces feel vast, like standing in a crowded city square, while others feel intimate, like sitting in a quiet café with a few familiar voices. What’s striking is how quickly those scales can shift. A small community can suddenly find itself overwhelmed by attention, and a massive platform can fragment into private pockets where people seek refuge from the noise.</p>
+        <p>This tension between big and small is central to how online culture develops. The largest platforms promise visibility, but often at the cost of depth. Conversations scroll past in streams too fast to hold onto, and trends flare up before they can fully take shape. Smaller spaces, by contrast, trade reach for connection. A forum thread, a group chat, or a niche blog may not draw millions, but it can create bonds that feel lasting and real.</p>
+        <p>The internet thrives because both scales exist. The big spaces set the rhythm of culture, providing a stage where ideas, jokes, and movements can reach the widest possible audience. The small ones, however, provide the conditions for trust, experimentation, and meaning. One fuels discovery; the other sustains belonging.</p>
+        <p>Yet as platforms grow, they often struggle to preserve that sense of smallness. Features designed to maximize scale—recommendation algorithms, trending lists, viral amplification—can flatten the uniqueness of communities. What was once personal becomes public, and the intimacy that made it meaningful begins to dissolve.</p>
+        <p>The challenge, then, is to find balance. To recognize when the scale of a space no longer fits its purpose, and to seek out or create new ones that do. Online life will always oscillate between the crowded square and the quiet café. The question is how we choose to move between them—and what we want to carry with us when we do.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

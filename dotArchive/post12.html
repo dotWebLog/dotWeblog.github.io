@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../index.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../about.html">About</a>
+      <a href="../archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #12 · <time datetime="2025-09-04">September 4, 2025</time></div>
+        <h2 id="post-title">The Unfinished Nature of Online Culture</h2>
+        <p>One of the quiet truths of the internet is that almost nothing online is finished. Websites are updated constantly, apps push endless patches, and even individual posts are edited, deleted, or remade in response to the shifting flow of attention. Unlike books or films, which are locked into their final form, online culture is defined by its incompleteness, by the sense that everything is provisional, subject to change at any moment.</p>
+        <p>This constant revision can feel unsettling. You might return to a page you bookmarked and find it entirely different, or notice that a viral post you shared is suddenly gone without explanation. Online memory is fragile, not because the information disappears, but because it is always being rewritten. What we think of as permanent is often just a temporary snapshot in an ongoing process.</p>
+        <p>At the same time, this impermanence allows for creativity that thrives on flexibility. A meme can evolve from a single image into countless variations, each remix building on the last. A digital project can grow through open contributions, shifting direction as new voices join in. Even mistakes and missteps can be part of the process, folded back into the culture rather than erased.</p>
+        <p>The unfinished nature of online culture also mirrors our own unfinished selves. Just as we update profiles, adjust usernames, and reinvent how we present ourselves, the internet reflects the idea that identity and meaning are not static. They are always in motion, always being revised.</p>
+        <p>Perhaps that is the internet’s truest form: not as a library of fixed artifacts, but as a living workshop. A place where nothing is ever fully done, and where the act of revising, reshaping, and remaking is itself the culture.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

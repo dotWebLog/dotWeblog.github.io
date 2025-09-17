@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../index.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../about.html">About</a>
+      <a href="../archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #5 · <time datetime="2025-08-15">August 15, 2025</time></div>
+        <h2 id="post-title">The Endless Pull of the Infinite Scroll</h2>
+        <p>Scrolling through a social media feed can feel like drifting through a dream. There’s no clear beginning or end—just a constant stream of images, words, and sounds, each demanding your attention for a fleeting moment before the next one arrives. Hours can disappear without a sense of time passing, replaced by a vague awareness of having seen dozens, maybe hundreds, of things you can’t fully recall. This is the peculiar nature of the infinite scroll: it’s both a marvel of modern design and a quiet trap for our attention.</p>
+        <p>The appeal is obvious. Each flick of the finger promises something new—another joke, another video, another headline that might be interesting enough to pause for. The brain rewards this unpredictability. The randomness of what appears next mirrors the rush of chance, the same thrill that drives slot machines or surprise gifts. But unlike a game with defined limits, the feed never runs out. There is always one more post, one more reel, one more chance for something extraordinary to appear.</p>
+        <p>This endlessness shapes not only how we consume content but how we create it. Creators compete in a crowded space where a few seconds can determine whether someone stops to engage or keeps scrolling past. Videos are edited to grab attention instantly. Headlines are crafted to provoke curiosity—or outrage—within a handful of words. In this environment, subtlety often loses to spectacle, and the rhythm of content accelerates to match the pace of the scroll.</p>
+        <p>And yet, the infinite scroll is not inherently bad. It’s a mirror of our curiosity, our hunger for novelty, and our desire to feel connected to the wider world. It allows us to discover voices we might never have encountered otherwise. But it also demands awareness. Without it, hours slip away into an ocean of half-remembered posts, leaving us oddly full yet unsatisfied.</p>
+        <p>The challenge is not to escape the scroll entirely but to navigate it deliberately. To pause when something resonates. To seek out creators whose work enriches rather than just entertains. To recognize when the endless feed has shifted from discovery to distraction. The internet’s river of content will keep flowing, but it’s up to each of us to decide whether we drift aimlessly or choose moments to step onto the shore.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

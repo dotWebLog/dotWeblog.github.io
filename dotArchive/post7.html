@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../index.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../about.html">About</a>
+      <a href="../archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #7 · <time datetime="2025-08-19">August 19, 2025</time></div>
+        <h2 id="post-title">The Comfort of Watching Strangers Online</h2>
+        <p>There’s a peculiar intimacy to watching strangers online. Whether it’s a livestream, a vlog, or a short video on a social platform, we often find ourselves captivated by the ordinary details of other people’s lives. A cup of coffee being made, a desk being organized, a casual conversation shared with an unseen audience—these small windows into everyday routines have become their own genre of internet content. They’re not about spectacle or performance in the traditional sense, but about presence, about the quiet feeling of being connected to someone else through a screen.</p>
+        <p>This type of content has been called “ambient” or “cozy” media, and its rise says a lot about how our digital lives intersect with our personal ones. In a world where attention is pulled in countless directions, there’s something soothing about a video that asks very little of us. We don’t have to keep up with a complex storyline or absorb breaking news. Instead, we can simply watch someone cook a meal, clean their room, or share a moment of reflection. It’s a slower, gentler side of internet culture, one that thrives not on virality but on consistency and familiarity.</p>
+        <p>Part of the appeal lies in the way it blurs the boundary between performer and viewer. These creators often feel less like distant celebrities and more like companions. Their content becomes part of our routines: a voice in the background while we work, a familiar presence during a quiet evening. Over time, this builds a kind of parasocial intimacy—one-sided, but still emotionally meaningful. It highlights the way the internet doesn’t just inform or entertain us, but also fills gaps in our social and emotional landscapes.</p>
+        <p>At the same time, this phenomenon raises interesting questions. What does it mean to feel close to someone who doesn’t know you exist? How does it shape our expectations of connection, and our comfort with spending more time online than offline? For some, these videos are a lifeline—a way to feel less alone in an increasingly fragmented world. For others, they spark concerns about replacing real relationships with digital surrogates.</p>
+        <p>Perhaps the truth lies somewhere in between. The internet has always been a place where boundaries blur: between private and public, between creator and audience, between solitude and connection. The rise of cozy, ambient content is simply another expression of this. It reflects our desire not just for distraction, but for companionship—for the reassurance that, even in the vastness of the digital world, there is someone else out there, sharing a little piece of their life with us.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

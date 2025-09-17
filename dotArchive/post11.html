@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../index.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../about.html">About</a>
+      <a href="../archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #11 · <time datetime="2025-09-02">September 2, 2025</time></div>
+        <h2 id="post-title">The Power of Slowness Online</h2>
+        <p>The internet thrives on speed, but sometimes its most powerful moments are the slow ones. In a culture of constant refresh, where updates are measured in seconds and trends can peak and fade within hours, slowness feels almost radical. Yet some of the most enduring online experiences come not from the rush of instant sharing, but from the patience of waiting, lingering, and letting things unfold.</p>
+        <p>Think about the anticipation of checking back on a long forum thread, watching a story develop piece by piece over days. Or the quiet ritual of reading a blog that updates once a week, its slower pace giving each post more weight. Even in the midst of the endless scroll, there are pockets of digital life that reward consistency and reflection over immediacy.</p>
+        <p>This slower internet doesn’t always grab headlines, but it sustains communities in ways that the viral moment cannot. It allows for trust to form, for conversations to deepen, and for ideas to settle. Unlike the algorithm-driven feeds that demand constant engagement, these slower spaces remind us that attention is valuable, and that not everything needs to compete for it at once.</p>
+        <p>What’s striking is how rare this feels now. The web was once built on waiting: dial-up connections, slow downloads, pages that loaded line by line. That slowness wasn’t convenient, but it gave each interaction a kind of gravity. Today, we can access almost anything instantly, yet the abundance of speed often leaves us scattered, chasing the next notification rather than savoring the present one.</p>
+        <p>Perhaps the future of digital life isn’t just in going faster, but in rediscovering the value of going slower. To pause before responding. To read deeply instead of skimming. To allow an online space to grow at its own pace, without demanding that it keep up with the churn of the larger web. Slowness online isn’t inefficiency—it’s a reminder that not all forms of connection are meant to be rushed.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dotWeblog — Digital Culture & Internet Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/styles.css">
+  <link rel="icon" href="../src/favicon.ico" type="image/x-icon">
+  <script defer src="../src/log.js"></script>
+  <meta name="dotWeblog" content="Digital Culture & Internet Life">
+</head>
+<body>
+  <header>
+    <a class="brand" href="../index.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="wordmark">dotWeblog</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../about.html">About</a>
+      <a href="../archives.html">Archives</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <h1>Welcome to dotWeblog <span class="cursor" aria-hidden="true"></span></h1>
+      <p>Where We Discover Digital Culture & Internet Life</p>
+    </section>
+    <main>
+      <article class="post" aria-labelledby="post-title">
+        <div class="meta">Post #8 · <time datetime="2025-08-23">August 23, 2025</time></div>
+        <h2 id="post-title">The Loops of Digital Memory</h2>
+        <p>The internet has a strange way of bending time. A single viral video can dominate the conversation for a few days and then vanish completely, replaced by the next moment that grabs collective attention. Yet sometimes, months or even years later, that same video will resurface, suddenly alive again on a different platform or in a different cultural context. Online, nothing ever really disappears—it just waits for its next revival.</p>
+        <p>This cycle of resurfacing creates a sense of digital déjà vu. You’ll scroll through your feed and see a meme you laughed at years ago, only now it’s framed in a new way, carrying a new meaning. It feels both familiar and fresh, a reminder that online culture doesn’t move in a straight line but in loops. Trends collapse and re-emerge, inside jokes get rediscovered by a new generation of users, and forgotten content finds a second life in unexpected places.</p>
+        <p>The phenomenon reveals something important about the internet’s memory. Unlike traditional media, which archives content in fixed formats, digital culture is fluid. Files are copied, remixed, and shared across platforms without boundaries. Each reappearance is not just a repeat but a re-interpretation. A viral tweet might become a TikTok sound, then a YouTube compilation, then a meme format on Instagram, each stage giving it a slightly different life.</p>
+        <p>There’s comfort in this looping of content. It means that even in the rush of the digital now, the past is never completely gone. It lingers, ready to be rediscovered, reshaped, and enjoyed all over again. At the same time, it highlights the way online culture resists finality. Nothing is truly over when everything can be revived.</p>
+        <p>In this endless cycle, the internet mirrors our own habits of nostalgia. Just as we return to old songs, films, or photographs to relive a feeling, online communities return to old content to rekindle a collective moment. The difference is that, online, this process happens not over decades but over weeks or months. Time is compressed, and with it, the rhythm of memory itself.</p>
+        <p>What emerges is a culture where the past and present constantly overlap. Viral content is never just of its time—it belongs to all the times it will be revived, re-shared, and reimagined. And in that ongoing circulation, the internet creates its own version of immortality.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p id="about">Made with curiosity and caffeine. © <span id="year"></span> dotWeblog. <a href="about.html">About</a> · <a href="archives.html">Archives</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year & add a tiny flourish for first-load
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
